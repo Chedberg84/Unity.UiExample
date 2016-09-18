@@ -1,1 +1,1 @@
-# Unity.UiExample
+# A POC for how to manage UI elements in Unity.
