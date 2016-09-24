@@ -5,18 +5,12 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
     
 	public float speed;
-	public Text countText;
-	public Text gameOver;
 
 	private Rigidbody rb;
-	private int count;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody>();
-		count = 0;
-		UpdateCountText ();
-		gameOver.text = "";
 	}
 	
 	// FixedUpdate is called once per frame before physics calculations run
@@ -34,17 +28,6 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("PickUp")) 
 		{
 			other.gameObject.SetActive (false);
-			count++;
-			UpdateCountText ();
-
-			if (count >= 13) {
-				gameOver.text = "You have one the game!";
-			}
 		}
-	}
-
-	private void UpdateCountText()
-	{
-		countText.text = "Count: " + count.ToString ();
 	}
 }
